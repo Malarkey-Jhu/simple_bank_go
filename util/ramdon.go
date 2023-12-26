@@ -14,7 +14,7 @@ func init() {
 }
 
 // generate a ramdom interger between min and max
-func RamdomInt(min, max int64) int64 {
+func RandomInt(min, max int64) int64 {
 	return min + rand.Int63n(max-min+1) //0+min -> max-min+min
 }
 
@@ -34,8 +34,8 @@ func RandomOwner() string {
 	return RandomString(6)
 }
 
-func RamdomMoney() int64 {
-	return RamdomInt(0, 1000)
+func RandomMoney() int64 {
+	return RandomInt(0, 1000)
 }
 
 func RandomCurrency() string {
