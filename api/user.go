@@ -3,7 +3,6 @@ package api
 import (
 	"log"
 	"net/http"
-	"time"
 
 	db "github.com/Malarkey-Jhu/simple-bank/db/sqlc"
 	"github.com/Malarkey-Jhu/simple-bank/util"
@@ -19,10 +18,9 @@ type createUserRequest struct {
 }
 
 type createUserRespose struct {
-	Username  string    `json:"username"`
-	FullName  string    `json:"full_name"`
-	Email     string    `json:"email"`
-	CreatedAt time.Time `json:"created_at"`
+	Username string `json:"username"`
+	FullName string `json:"full_name"`
+	Email    string `json:"email"`
 }
 
 func (server *Server) createUser(ctx *gin.Context) {
@@ -60,10 +58,9 @@ func (server *Server) createUser(ctx *gin.Context) {
 	}
 
 	resp := createUserRespose{
-		Username:  user.Username,
-		FullName:  user.FullName,
-		Email:     user.Email,
-		CreatedAt: user.CreatedAt,
+		Username: user.Username,
+		FullName: user.FullName,
+		Email:    user.Email,
 	}
 
 	ctx.JSON(http.StatusOK, resp)
