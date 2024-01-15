@@ -91,7 +91,7 @@ func TestListAccounts(t *testing.T) {
 	arg := ListAccountsParams{
 		Owner:  lastAccount.Owner,
 		Limit:  5,
-		Offset: 5,
+		Offset: 0,
 	}
 
 	accounts, err := testQueries.ListAccounts(context.Background(), arg)
